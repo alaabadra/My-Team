@@ -1,0 +1,702 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sedgwick Ave Display', cursive;
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: url(https://i.ibb.co/pjf3Gyd/background2.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.container__2 {
+  background: #80808099;
+  height: 100vh;
+}
+
+p {
+  border-radius: 10px;
+}
+
+.logo {
+  width: 15%;
+}
+
+.tabs {
+  list-style: none;
+  position: fixed;
+  top: 24%;
+}
+
+.tabs li {
+  margin-top: 35%;
+  cursor: pointer;
+}
+
+label[for="home"] {
+  background: #98bf019e;
+  border-radius: 0 10px 10px 0;
+}
+
+label[for="about"] {
+  background: #e84b28c4;
+  border-radius: 0 10px 10px 0;
+}
+
+label[for="cards"] {
+  background: #ed8420ba;
+  border-radius: 0 10px 10px 0;
+}
+
+label[for="contact"] {
+  background: #348ec1c4;
+  border-radius: 0 10px 10px 0;
+}
+
+.tab--content--home {
+  text-align: center;
+  margin-left: 200%;
+  top: -100px;
+}
+
+.tab__content {
+  display: none;
+  position: absolute;
+  margin-left: 200%;
+  top: -100px;
+}
+
+.h1_home {
+  color: #023302;
+  font-size: 50px;
+}
+
+.tabs li>input {
+  display: none;
+  position: absolute;
+}
+
+.tab__content__paragraph {
+  font-size: 30px;
+  font-weight: 550;
+  line-height: 45px;
+  width: 600px;
+  margin-top: 5%;
+  background: #0c0c0c7d;
+  color: white;
+  padding: 15px;
+}
+
+.tab__content__img {
+  border: 3px solid #00000075;
+  border-radius: 100%;
+  margin-top: 5%;
+  padding: 10px;
+}
+
+.tabs li>label {
+  line-height: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*functionality*/
+.tabs li>input:checked+label {
+  /*the input when checked the after input do that*/
+  border-bottom: 2px solid #ff1504;
+}
+
+.tabs li>input:checked~.tab__content {
+  /*the input check give the sibling class .tabs and do that*/
+  display: block;
+  margin-top: 60px;
+}
+
+@media screen and (max-width:1100px) {
+  .container1 {
+    width: 59%;
+  }
+
+  .h1--cards {
+    margin-left: 85px;
+  }
+
+  .about__us1 {
+    line-height: 7vh;
+  }
+
+  .tab--content--home {
+    margin-left: 127%;
+  }
+
+  .contact_us {
+    width: 70%;
+  }
+
+  .h1__cards {
+    margin-left: 145px;
+  }
+}
+
+@media screen and (max-width:935px) {
+  .contact_us {
+    width: 60%;
+  }
+
+  .h1__cards {
+    margin-left: 145px;
+  }
+
+  .h1--cards {
+    margin-left: 85px;
+  }
+
+  .about__us1 {
+    width: 122%;
+  }
+}
+
+/*start of team cards*/
+.team-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20%;
+  width: 100%;
+}
+
+.h1__cards {
+  margin-left: 200px;
+  margin-bottom: 8%;
+  font-size: 50px;
+  margin-top: -50px;
+}
+
+.h1--our {
+  color: #ed8420;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 2000px;
+  margin-bottom: 8%;
+}
+
+.two-flip-cards {
+  display: block;
+  max-width: 50%;
+  width: 250px;
+  height: 402px;
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #141d235c;
+  color: black;
+  z-index: 2;
+  border: 2px solid #cacbce87;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.flip-card-back {
+  display: flex;
+  flex-direction: column;
+  background-color: #141d23;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+  border: 2px solid RED;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.card-links {
+  line-height: 2;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.card-links:hover {
+  color: RED;
+}
+
+@media only screen and (max-width: 1050px) {
+  .flip-card {
+    padding: 10px;
+    margin-bottom: 0;
+    flex: 1 0 20%;
+    width: 200px;
+    height: 200px;
+  }
+
+  .team-cards {
+    margin-left: 0;
+  }
+
+  .flip-card-back h3 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .team-cards {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .flip-card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .two-flip-cards {
+    max-width: 400px;
+    margin: 0px;
+  }
+
+  .container__2 {
+    height: 983px;
+  }
+}
+
+/*amin area*/
+.about__h2 {
+  width: 250px;
+  font-size: 50px;
+  margin: 0px 144px;
+}
+
+.about__us1 {
+  color: white;
+  font-size: 150%;
+  line-height: 10vh;
+  background: #0c0c0c5e;
+  color: white;
+  padding: 10px;
+  margin-top: 5%;
+  width: 147%;
+}
+
+.about__us {
+  min-height: 450px;
+}
+
+.img__left {
+  background-image: url(../img/3.jpg);
+  background-size: 600px;
+  background-position: center center;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+.container1 {
+  width: 80%;
+  text-align: center;
+}
+
+.about__span {
+  color: #e64926;
+}
+
+/******contact_us******/
+/*div1 contact-area*/
+.h1--contact {
+  color: rgb(5, 114, 191);
+}
+
+.contact-area {
+  margin: 0px 106px;
+  width: 700px;
+}
+
+/*div2 contact_us*/
+.contact_us {
+  margin-left: -71px;
+  margin-top: 40px;
+  border-radius: 10px;
+  background: #443d37b0;
+  width: 390px;
+  padding: 20px;
+  width: 90%;
+}
+
+/*input, textarea that inside div2 contact_us*/
+input, textarea {
+  width: 100%;
+  border: 0px solid rgb(255, 255, 255);
+  background: #f8f6f6;
+  margin: 10px 0 10px 0px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.input_field {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*button*/
+button[type="submit"] {
+  width: 53%;
+  background: rgb(5, 114, 191);
+  ;
+  color: white;
+  margin: 6px 0 4px 107px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* to suite contact_area with medium screen (less than 780px) */
+/*@media only screen and (max-width: 990px) {
+  .contact-area {
+    margin-left: -25px;
+    width: 100%;
+  }
+}*/
+@media screen and (max-width:1100px) {
+  .container1 {
+    width: 59%;
+  }
+
+  .h1--cards {
+    margin-left: 85px;
+  }
+
+  .about__us1 {
+    line-height: 7vh;
+  }
+
+  .tab--content--home {
+    margin-left: 127%;
+  }
+
+  .contact_us {
+    width: 70%;
+  }
+
+  .h1__cards {
+    margin-left: 145px;
+  }
+
+  .about__h2 {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width:935px) {
+  .contact_us {
+    width: 60%;
+  }
+
+  .h1__cards {
+    margin-left: 145px;
+  }
+
+  .h1--cards {
+    margin-left: 85px;
+  }
+
+  .about__us1 {
+    width: 166%;
+    line-height: 41px;
+  }
+
+  .about__h2 {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width:870px) {
+  .h1_home {
+    font-size: 40px;
+    margin-top: 70px;
+  }
+
+  .tab__content__img {
+    width: 30%;
+  }
+
+  .tab__content__paragraph {
+    font-size: 20px;
+    width: 490px;
+  }
+
+  .team-cards {
+    margin-left: -10%;
+  }
+
+  .h1--cards {
+    margin-left: 45px;
+    font-size: 40px;
+  }
+
+  .contact_us {
+    margin-left: -25%;
+  }
+
+  .h1--contact {
+    margin-left: -5px;
+    font-size: 40px;
+  }
+
+  .about__h2 {
+    font-size: 40px;
+    margin-left: 18%;
+  }
+
+  .h1--cards {
+    margin-left: 85px;
+  }
+
+  .about__us1 {
+    width: 133%;
+    line-height: 41px;
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width:760px) {
+  .h1_home {
+    margin-top: 121px;
+  }
+
+  .team-cards {
+    margin-left: -28%;
+  }
+
+  .h1--cards {
+    margin-left: -19px;
+  }
+
+  .tab__content__paragraph {
+    padding: 5px;
+    width: 420px;
+  }
+
+  .contact_us {
+    margin-left: -30%;
+    width: 50%;
+  }
+
+  .h1--contact {
+    margin-left: -46px;
+    font-size: 30px;
+  }
+
+  .container1 {
+    margin-left: -110px;
+    width: 104%;
+  }
+
+  .about__h2 {
+    margin-top: 37px;
+  }
+}
+
+@media screen and (max-width:670px) {
+  .tabs {
+    top: 10%;
+  }
+
+  .tabs li>label {
+    font-size: 18px;
+  }
+
+  .h1_home {
+    font-size: 20px;
+    margin-top: 40%;
+  }
+
+  .tab__content__img {
+    width: 115px;
+  }
+
+  .tab__content__paragraph {
+    font-size: 16px;
+    padding: 0;
+    width: 284px;
+  }
+
+  .about__h2 {
+    font-size: 20px;
+    margin-top: 55px;
+  }
+
+  .about__us1 {
+    font-size: 16px;
+    margin-top: 15px;
+    width: 85%;
+    line-height: 2;
+  }
+
+  .team-cards {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: -102px;
+  }
+
+  .h1--cards {
+    font-size: 20px;
+    margin-left: 34px;
+    margin-top: 38px;
+    margin-bottom: 126px;
+    margin-left: -58px;
+  }
+
+  .input_field {
+    font-size: 16px;
+  }
+
+  .h1--contact {
+    margin-top: 59px;
+    font-size: 20px;
+    margin-bottom: -29px;
+  }
+
+  .contact_us {
+    width: 40%;
+  }
+
+  .flip-card {
+    width: 200px;
+    height: 150px;
+    margin-bottom: -14px;
+  }
+
+  .two-flip-cards {
+    margin-top: -130px;
+  }
+}
+
+@media screen and (max-width:495px) {
+  .tabs {
+    top: 6%;
+  }
+
+  .tabs li>label {
+    font-size: 14px;
+  }
+
+  .h1_home {
+    font-size: 20px;
+    margin-top: 40%;
+  }
+
+  .tab__content__img {
+    width: 89px;
+  }
+
+  .tab__content__paragraph {
+    font-size: 13px;
+    padding: 0;
+    width: 155px;
+  }
+
+  .about__h2 {
+    margin-left: -10%;
+  }
+
+  .about__us1 {
+    font-size: 13px;
+    width: 65%;
+  }
+
+  .team-cards {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: -102px;
+  }
+
+  .h1--cards {
+    font-size: 20px;
+    margin-left: 34px;
+    margin-top: 38px;
+    margin-bottom: 126px;
+    margin-left: -58px;
+  }
+
+  .input_field {
+    font-size: 13px;
+  }
+
+  .h1--contact {
+    margin-top: 59px;
+    font-size: 20px;
+    margin-bottom: -29px;
+  }
+  input, textarea{
+    font-size: 12px;
+  }
+
+  .contact_us {
+    width: 25%;
+  }
+
+  .flip-card {
+    width: 125px;
+    height: 129px;
+    margin-bottom: 2px;
+  }
+  button[type="submit"]{
+    margin-left: 25px;
+  }
+
+  div[aria-label="data"] {
+    font-size: 10px;
+  }
+
+  .two-flip-cards {
+    margin-top: -130px;
+  }
+}
